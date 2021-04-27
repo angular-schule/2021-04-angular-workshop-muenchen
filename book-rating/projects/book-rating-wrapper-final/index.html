@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>BookRatingWrapper</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="stylesheet" href="styles.css"></head>
+<body>
+  <!-- <app-root></app-root> -->
+
+  <book-component></book-component>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function(event) {
+      const comp = document.querySelector('book-component');
+      comp.book = {
+        isbn: '000',
+        title: 'Angular',
+        description: 'it works',
+        rating: 5
+      };
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function(event) {
+      const comp = document.querySelector('book-component');
+
+      comp.addEventListener('rateUp', function (e) {
+        console.log('Rate Up!', e);
+      });
+
+      comp.addEventListener('rateDown', function (e) {
+        console.log('Rate Down!', e);
+      });
+    });
+  </script>
+
+  <script src="runtime.js" defer></script>
+  <script src="polyfills.js" defer></script>
+  <script src="main.js" defer></script></body>
+</html>
