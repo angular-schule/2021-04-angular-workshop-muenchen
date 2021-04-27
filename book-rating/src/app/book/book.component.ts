@@ -11,4 +11,8 @@ export class BookComponent {
 
   @Input()
   book: Book;
+
+  log() {
+    console.log('CD!', +(new Date()))
+  }
 }

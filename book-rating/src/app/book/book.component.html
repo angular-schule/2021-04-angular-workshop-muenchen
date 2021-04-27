@@ -1,5 +1,25 @@
-<h2>{{ book.title }} -- {{ book.rating }}</h2>
+<div class="card mb-4">
+  <div class="card-body bg-light">
+      <img class="img-thumbnail float-right"
+        src="//api.angular.schule/avatar/{{ book.rating }}">
+    <div class="card-title">
+      <h2>
+        {{ book.title }}
+        <span class="badge badge-secondary">{{ book.rating }}</span>
+      </h2>
+    </div>
+    <p>{{ book.description }}</p>
 
-<p>
-  {{ book.description }}
-</p>
+
+  <!-- NICHT SO MACHEN! :D -->
+  <!--
+    1. Keine Objekte mutieren
+    2. Keine Logik im HTML
+    3. Single Responsebility Principle verletzt
+  -->
+  <button class="btn btn-primary mr-2" (click)="book.rating = book.rating - 1">-1</button>
+  <button class="btn btn-primary" (click)="book.rating = book.rating + 1">+1</button>
+  </div>
+
+  {{ log() }}
+</div>
