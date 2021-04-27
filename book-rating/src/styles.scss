@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~@angular-schule/workshop-styles/index';
+
+
+
+
+.btn-primary {
+  background-color: red;
+  border-color: darkred;
+}
+
+.btn-primary:hover {
+  background-color: darkred;
+  border-color: black;
+}
+
