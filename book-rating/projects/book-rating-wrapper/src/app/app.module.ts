@@ -13,7 +13,7 @@ import { BookComponent } from 'src/app/books/book/book.component';
   ],
   providers: [],
   bootstrap: [
-    // AppComponent
+    // BookComponent
   ]
 })
 export class AppModule implements DoBootstrap {
