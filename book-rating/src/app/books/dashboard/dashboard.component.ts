@@ -12,7 +12,8 @@ export class DashboardComponent implements OnInit {
 
   books: Book[];
 
-  constructor(public br: BookRatingService) { }
+  constructor(public br: BookRatingService) {
+  }
 
   ngOnInit(): void {
     this.books = [{
@@ -40,6 +41,10 @@ export class DashboardComponent implements OnInit {
 
   doRateUp(book: Book): void {
     const ratedBook = this.br.rateUp(book);
+    // const ratedBook =  {
+    //   ...book,
+    //   rating: book.rating < 5 ? book.rating + 1 : 5
+    // };
     this.updateAndSortBooks(ratedBook);
   }
 
