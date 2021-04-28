@@ -10,15 +10,8 @@
     </div>
     <p>{{ book?.description }}</p>
 
-
-  <!-- NICHT SO MACHEN! :D -->
-  <!--
-    1. Keine Objekte mutieren
-    2. Keine Logik im HTML
-    3. Single Responsebility Principle verletzt
-  -->
-  <button class="btn btn-primary mr-2" (click)="book.rating = book.rating - 1">-1</button>
-  <button class="btn btn-primary" (click)="book.rating = book.rating + 1">+1</button>
+    <button class="btn btn-primary mr-2" (click)="doRateDown()">-1</button>
+    <button class="btn btn-primary" (click)="doRateUp()">+1</button>
   </div>
 
   {{ log() }}
