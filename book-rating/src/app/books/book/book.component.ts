@@ -18,6 +18,12 @@ export class BookComponent {
   @Input()
   book: Book;
 
+  @Input()
+  rateDownAllowed = (book: Book) => true
+
+  @Input()
+  rateUpAllowed = (book: Book) => true
+
   doRateDown(): void {
     this.rateDown.emit(this.book);
   }

@@ -12,7 +12,7 @@ export class DashboardComponent implements OnInit {
 
   books: Book[];
 
-  constructor(private br: BookRatingService) { }
+  constructor(public br: BookRatingService) { }
 
   ngOnInit(): void {
     this.books = [{
