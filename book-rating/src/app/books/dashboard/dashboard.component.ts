@@ -33,13 +33,13 @@ export class DashboardComponent implements OnInit {
     }];
   }
 
-  doRateDown(newBook: Book): void {
-    const ratedBook = this.br.rateDown(newBook);
+  doRateDown(book: Book): void {
+    const ratedBook = this.br.rateDown(book);
     this.updateAndSortBooks(ratedBook);
   }
 
-  doRateUp(newBook: Book): void {
-    const ratedBook = this.br.rateUp(newBook);
+  doRateUp(book: Book): void {
+    const ratedBook = this.br.rateUp(book);
     this.updateAndSortBooks(ratedBook);
   }
 
