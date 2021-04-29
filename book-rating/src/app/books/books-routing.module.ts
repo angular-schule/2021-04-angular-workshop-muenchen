@@ -4,8 +4,8 @@ import { BookDetailsComponent } from './book-details/book-details.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
-  { path: 'books', component: DashboardComponent },
-  { path: 'books/:isbn', component: BookDetailsComponent }
+  { path: '', component: DashboardComponent, pathMatch: 'full' },
+  { path: ':isbn', component: BookDetailsComponent }
 
 ];
 
