@@ -23,7 +23,11 @@ export class GameScoreComponent implements OnInit {
 
     /******************************/
 
-    
+    this.score$.subscribe();
+
+    this.score$.subscribe();
+
+
     /******************************/
 
     this.score$.subscribe({
