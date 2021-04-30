@@ -32,6 +32,9 @@ export class MulticastComponent implements OnInit {
     // this.measureValues$ = new ReplaySubject<number>(1);
     // this.mvs.getValues().subscribe(this.measureValues$)
 
+
+
+    
     this.measureValues$ = new BehaviorSubject<number>(9999);
     this.mvs.getValues().pipe(
       delay(5 * 1000)

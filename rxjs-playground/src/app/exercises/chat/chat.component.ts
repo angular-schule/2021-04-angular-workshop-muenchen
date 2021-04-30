@@ -36,7 +36,7 @@ export class ChatComponent implements OnInit {
 
     /**************!!**************/
 
-    merge(
+    race(
       this.msg.julia$,
       this.msg.georg$,
       this.msg.john$
