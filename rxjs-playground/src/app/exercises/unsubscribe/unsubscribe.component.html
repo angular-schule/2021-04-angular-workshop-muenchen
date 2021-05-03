@@ -1,6 +1,10 @@
-<button class="btn btn-danger" (click)="ngOnDestroy()">Destroy</button>
+<!-- <button class="btn btn-danger" (click)="ngOnDestroy()">Destroy</button> -->
 
-<rxw-history [logStream]="logStream$" class="mt-3"></rxw-history>
+<!-- <rxw-history [logStream]="logStream$" class="mt-3"></rxw-history> -->
+
+
+<h1>{{ x$ | async }}</h1>
+
 
 <ul class="mt-4">
   <li>Öffne die Browser-Console: Dort siehst Du den Output eines Observables, das jede Sekunde einen Wert generiert.</li>
