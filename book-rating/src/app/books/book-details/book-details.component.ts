@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
-import { catchError, map, mergeMap, retry, share, shareReplay, switchMap } from 'rxjs/operators';
+import { catchError, map, mergeMap, retry, share, shareReplay, startWith, switchMap } from 'rxjs/operators';
 import { BookStoreService } from '../shared/book-store.service';
 
 
@@ -23,7 +23,8 @@ export class BookDetailsComponent {
         title: 'FEHLER',
         description: err.message,
         rating: 0
-      }))
+      })),
+      startWith(undefined)
     ))
   );
 

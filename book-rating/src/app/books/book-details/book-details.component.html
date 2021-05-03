@@ -1,4 +1,4 @@
-<ng-container *ngIf="book$ | async as book else loading">
+<ng-container *ngIf="book$ | async as book; else loading">
 
   <h2>{{ book.title }} - {{ book.rating }} </h2>
 
@@ -15,7 +15,7 @@
 </ng-container>
 
 <ng-template #loading>
-  <h2>Warte auf das erste Buch...</h2>
+  <h2>Bitte warten</h2>
 </ng-template>
 
 <hr>
