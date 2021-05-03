@@ -1,6 +1,6 @@
-<h2>{{ result$ | async | json }}</h2>
+<h2>{{ (book$ | async).title }}</h2>
 
-<p>book-details works!</p>
+<p>{{ (book$ | async).description }}</p>
 
 
 <hr>
