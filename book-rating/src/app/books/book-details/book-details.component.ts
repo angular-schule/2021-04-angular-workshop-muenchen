@@ -24,8 +24,7 @@ export class BookDetailsComponent {
         description: err.message,
         rating: 0
       }))
-    )),
-    shareReplay(1)
+    ))
   );
 
   constructor(private router: ActivatedRoute, private bs: BookStoreService) {
