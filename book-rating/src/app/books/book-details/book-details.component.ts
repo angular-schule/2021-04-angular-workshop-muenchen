@@ -13,7 +13,7 @@ export class BookDetailsComponent {
 
   result$ = this.router.paramMap.pipe(
     map(paramMap => paramMap.get('isbn')),
-    mergeMap(isbn => this.bs.getSingle(isbn))
+    switchMap(isbn => this.bs.getSingle(isbn))
   );
 
   constructor(private router: ActivatedRoute, private bs: BookStoreService) {
