@@ -14,8 +14,11 @@
 
 </ng-container>
 
+<h2 *ngIf="isLoading">Bitte warten!</h2>
+
+
 <ng-template #loading>
-  <h2>Bitte warten</h2>
+  <h2>Warte auf das erste Buch...</h2>
 </ng-template>
 
 <hr>
