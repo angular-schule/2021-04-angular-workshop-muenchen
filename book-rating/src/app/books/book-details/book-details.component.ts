@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
-import { catchError, map, mergeMap, retry, share, switchMap } from 'rxjs/operators';
+import { catchError, map, mergeMap, retry, share, shareReplay, switchMap } from 'rxjs/operators';
 import { BookStoreService } from '../shared/book-store.service';
 
 
@@ -25,7 +25,7 @@ export class BookDetailsComponent {
         rating: 0
       }))
     )),
-    share()
+    shareReplay(1)
   );
 
   constructor(private router: ActivatedRoute, private bs: BookStoreService) {
