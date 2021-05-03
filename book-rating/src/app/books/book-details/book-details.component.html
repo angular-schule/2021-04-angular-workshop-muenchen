@@ -1,6 +1,6 @@
-<h2>{{ (book$ | async).title }}</h2>
+<h2>{{ (book$ | async)?.title }} - {{ (book$ | async)?.rating }} </h2>
 
-<p>{{ (book$ | async).description }}</p>
+<p>{{ (book$ | async)?.description }}</p>
 
 
 <hr>
