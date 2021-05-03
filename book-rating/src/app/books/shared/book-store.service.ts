@@ -21,4 +21,11 @@ export class BookStoreService {
       //   catchError(e => EMPTY)
       // );
   }
+
+  search(term: string): Observable<Book[]> {
+    return this.http.get<Book[]>(`https://api.angular.schule/books/search/${term}`)
+      .pipe(
+        catchError(e => EMPTY)
+      );
+  }
 }

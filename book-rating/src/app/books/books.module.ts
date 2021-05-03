@@ -12,6 +12,7 @@ import * as fromBook from './store/book.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { BookEffects } from './store/book.effects';
 import { loadBooks } from './store/book.actions';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { loadBooks } from './store/book.actions';
     DashboardComponent,
     BookComponent,
     CreateBookComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    SearchComponent
   ],
   imports: [
     CommonModule,

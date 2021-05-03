@@ -2,10 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent, pathMatch: 'full' },
-  { path: ':isbn', component: BookDetailsComponent }
+  { path: 'search', component: SearchComponent },
+  { path: ':isbn', component: BookDetailsComponent },
+
 
 ];
 
