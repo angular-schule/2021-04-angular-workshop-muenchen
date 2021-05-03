@@ -28,7 +28,12 @@ export class ErrorHandlingComponent {
 
       /******************************/
 
-      
+      retry(5)
+
+      //catchError((e, o) => throwError('gg'))
+      //catchError((e, o) => of('normal element'))
+      //catchError(e => EMPTY)
+
       /******************************/
 
     ).subscribe({
