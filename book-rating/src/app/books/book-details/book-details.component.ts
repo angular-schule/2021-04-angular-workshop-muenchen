@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs/operators';
+import { BookStoreService } from '../shared/book-store.service';
+
 
 @Component({
   selector: 'br-book-details',
@@ -8,13 +11,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BookDetailsComponent {
 
-  // $result =
+  result$ = this.router.paramMap.pipe(
+    map(paramMap => paramMap.get('isbn')),
+    map(isbn => this.bs.getSingle(isbn))
+  );
 
-  isbn: string;
-
-  constructor(private router: ActivatedRoute) {
-    debugger;
-    this.isbn = router.snapshot.paramMap.get('isbn');
+  constructor(private router: ActivatedRoute, private bs: BookStoreService) {
   }
 
 }
