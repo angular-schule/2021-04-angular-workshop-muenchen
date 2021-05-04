@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 
 import { loadBooks } from './book.actions';
-import { selectBooks, selectBooksLoading, selectSelectedBook } from './book.selectors';
+import { selectBookByIsbn, selectBooks, selectBooksLoading, selectSelectedBook } from './book.selectors';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +18,12 @@ export class BookFacadeService {
 
   loadBooks() {
     this.store.dispatch(loadBooks());
+  }
+
+  selectBookByIsbn(isbn: string) {
+    // TODO: action feuern
+    // this.store.dispatch(loadBooks());
+    return this.store.select(selectBookByIsbn, { isbn });
   }
 
   // rateUp(book: Book) {
