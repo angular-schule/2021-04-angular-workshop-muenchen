@@ -39,7 +39,6 @@ import { CustomRouterStateSerializer } from './utils-ngrx-router/serializer';
 
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    StoreRouterConnectingModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
