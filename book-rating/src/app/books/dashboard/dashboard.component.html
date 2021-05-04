@@ -4,13 +4,15 @@
 
 <hr class="mb-4">
 
-<!-- <div class="grayBackground"> -->
-  <br-book
-    *ngFor="let b of books"
-    [book]="b"
-    (rateDown)="doRateDown($event)"
-    (rateUp)="doRateUp($event)"
-  ></br-book>
-<!-- </div> -->
+<br-book
+  *ngFor="let b of books$ | async"
+  [book]="b"
+  (rateDown)="doRateDown($event)"
+  (rateUp)="doRateUp($event)"
+></br-book>
 
-Anzahl der Bücher: {{ books.length }}
+<h3 *ngIf="loading$ | async">
+  Loading...
+</h3>
+
+Anzahl der Bücher: {{ (books$ | async).length }}
