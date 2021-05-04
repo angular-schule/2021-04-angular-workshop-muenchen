@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
+import { mapToParam, ofRoute } from 'src/app/utils-ngrx-router/operators';
 
 import { BookStoreService } from '../shared/book-store.service';
 import * as BookActions from './book.actions';
@@ -20,5 +21,14 @@ export class BookEffects {
     );
   });
 
-  constructor(private actions$: Actions, private bs: BookStoreService) {} you
+  loadElementOnRouting$ = createEffect(() =>
+    this.actions$.pipe(
+      ofRoute(['books/:isbn']),
+      // ofRoute(/books\/.*/),
+      mapToParam('isbn'),
+      map(isbn => BookActions.detailsRouteLoaded({ isbn }))
+    )
+  );
+
+  constructor(private actions$: Actions, private bs: BookStoreService) {}
 }
