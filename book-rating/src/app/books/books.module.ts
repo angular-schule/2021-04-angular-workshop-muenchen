@@ -37,6 +37,6 @@ import { SearchComponent } from './search/search.component';
 export class BooksModule {
 
   constructor(private store: Store) {
-    store.dispatch(loadBooks());
+    // store.dispatch(loadBooks());
   }
 }

@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit {
   loading$ = this.store.pipe(select(selectBooksLoading));
 
   constructor(private store: Store) {
-    // store.dispatch(loadBooks());
+    store.dispatch(loadBooks());
   }
 
   ngOnInit(): void {
