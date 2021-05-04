@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { BookFacadeService } from '../store/book-facade.service';
 
 import { selectBooksLoading, selectSelectedBook } from '../store/book.selectors';
 
@@ -10,11 +11,5 @@ import { selectBooksLoading, selectSelectedBook } from '../store/book.selectors'
   styleUrls: ['./book-details.component.scss']
 })
 export class BookDetailsComponent {
-
-  book$ = this.store.select(selectSelectedBook);
-  loading$ = this.store.select(selectBooksLoading);
-
-
-  constructor(private store: Store) { }
-
+  constructor(public facade: BookFacadeService) { }
 }

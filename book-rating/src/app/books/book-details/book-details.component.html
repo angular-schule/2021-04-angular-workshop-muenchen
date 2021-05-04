@@ -1,11 +1,11 @@
-<ng-container *ngIf="book$ | async as book">
+<ng-container *ngIf="facade.book$ | async as book">
 
   <h2>{{ book.title }} - {{ book.rating }} </h2>
-  <p>{{ book.description }}</p>
+  <p>{{ book.description }}
 
 </ng-container>
 
-<h2 *ngIf="loading$ | async">Bitte warten!</h2>
+<h2 *ngIf="facade.loading$ | async">Bitte warten!</h2>
 
 <hr>
 

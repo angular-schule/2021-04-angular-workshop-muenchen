@@ -5,14 +5,14 @@
 <hr class="mb-4">
 
 <br-book
-  *ngFor="let b of books$ | async"
+  *ngFor="let b of facade.books$ | async"
   [book]="b"
   (rateDown)="doRateDown($event)"
   (rateUp)="doRateUp($event)"
 ></br-book>
 
-<h3 *ngIf="loading$ | async">
+<h3 *ngIf="facade.loading$ | async">
   Loading...
 </h3>
 
-Anzahl der Bücher: {{ (books$ | async).length }}
+Anzahl der Bücher: {{ (facade.books$ | async).length }}

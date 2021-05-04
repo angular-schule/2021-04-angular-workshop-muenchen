@@ -3,6 +3,7 @@ import { select, Store } from '@ngrx/store';
 import { Book } from '../shared/book';
 import { BookRatingService } from '../shared/book-rating.service';
 import { BookStoreService } from '../shared/book-store.service';
+import { BookFacadeService } from '../store/book-facade.service';
 import { loadBooks } from '../store/book.actions';
 import { selectBooks, selectBooksLoading } from '../store/book.selectors';
 
@@ -14,11 +15,8 @@ import { selectBooks, selectBooksLoading } from '../store/book.selectors';
 })
 export class DashboardComponent implements OnInit {
 
-  books$ = this.store.pipe(select(selectBooks));
-  loading$ = this.store.pipe(select(selectBooksLoading));
-
-  constructor(private store: Store) {
-    store.dispatch(loadBooks());
+  constructor(public facade: BookFacadeService) {
+    facade.loadBooks();
   }
 
   ngOnInit(): void {
